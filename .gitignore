@@ -1,0 +1,19 @@
+HELP.md
+build/
+!**/src/main/**
+!**/src/test/**
+
+### Auth data ####
+src/main/resources/properties/auth.properties
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### Gradle ###
+.gradle
+
+### Logs ###
+*.log
