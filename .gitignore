@@ -4,7 +4,7 @@ build/
 !**/src/test/**
 
 ### Auth data ####
-src/main/resources/properties/auth.properties
+src/test/resources/properties/auth.properties
 
 ### IntelliJ IDEA ###
 .idea
