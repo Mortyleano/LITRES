@@ -3,9 +3,6 @@ build/
 !**/src/main/**
 !**/src/test/**
 
-### Auth data ####
-src/test/resources/properties/auth.properties
-
 ### IntelliJ IDEA ###
 .idea
 *.iws
