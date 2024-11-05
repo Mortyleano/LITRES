@@ -13,8 +13,5 @@ public class ApiBase {
     @Step("Устанавливаем конфигурации перед запуском теста")
     public static void settingsTest() {
         RestAssured.baseURI = LAUNCH_CONFIG.getBaseApiUrl();
-        if (LAUNCH_CONFIG.isRemote()) {
-            Configuration.remote = LAUNCH_CONFIG.remoteUrl();
-        }
     }
 }

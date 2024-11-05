@@ -18,7 +18,7 @@ import static specs.AuthorizationSpecification.authorizationResponseSpec;
 import static specs.AuthorizationSpecification.unsuccessfulAuthorizationRequestSpec;
 import static specs.AuthorizationSpecification.unsuccessfulAuthorizationResponseSpec;
 
-@DisplayName("Авторизация на сайте")
+@DisplayName("Авторизация на сайте через API")
 public class AuthorizationTests extends ApiBase {
 
     @Tags({
@@ -26,7 +26,7 @@ public class AuthorizationTests extends ApiBase {
             @Tag("smoke")
     })
     @Test
-    @DisplayName("Проверка успешной авторизации на сайте со статус-кодом '200'")
+    @DisplayName("Проверка успешной авторизации на сайте через API со статус-кодом '200'")
     public void successfulAuthorizationTest() {
         AuthorizationData authData = new AuthorizationData();
 
@@ -50,7 +50,7 @@ public class AuthorizationTests extends ApiBase {
             @Tag("smoke")
     })
     @Test
-    @DisplayName("Проверка ошибки авторизации со статус-кодом '422'")
+    @DisplayName("Проверка ошибки авторизации на сайте через API со статус-кодом '422'")
     public void unsuccessfulAuthorizationTest() {
         AuthorizationData authData = new AuthorizationData();
 

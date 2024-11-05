@@ -27,9 +27,6 @@ public class WebBase {
         Configuration.browserVersion = LAUNCH_CONFIG.getBrowserVersion();
         Configuration.browserSize = LAUNCH_CONFIG.getBrowserSize();
         Configuration.pageLoadStrategy = LAUNCH_CONFIG.pageLoadStrategy();
-        if (LAUNCH_CONFIG.isRemote()) {
-            Configuration.remote = LAUNCH_CONFIG.remoteUrl();
-        }
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

@@ -21,14 +21,17 @@ public class CartPage {
         return this;
     }
 
+    @Step("Проверяем отображение наименование книги в корзине")
     public boolean isTitleBookInCartPresent() {
         return BOOK_TITLE.is(visible.because("Не отображается наименование книги в корзине"));
     }
 
+    @Step("Проверяем отображение автора книги в корзине")
     public boolean isAuthorBookInCartPresent() {
         return BOOK_AUTHOR.is(visible.because("Не отображается автор книги в корзине"));
     }
 
+    @Step("Проверяем отображение обложки для книги в корзине")
     public boolean isCoverBookInCartPresent() {
         return BOOK_COVER.is(visible.because("Не отображается обложка книги в корзине"));
     }

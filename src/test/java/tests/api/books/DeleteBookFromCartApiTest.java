@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static specs.BooksSpecification.deleteBookFromCartRequestSpec;
 import static specs.BooksSpecification.deleteBookFromCartResponseSpec;
 
-@DisplayName("Удаление книги из корзины")
+@DisplayName("Удаление книги из корзины через API")
 public class DeleteBookFromCartApiTest extends ApiBase {
 
     @BeforeEach
@@ -30,7 +30,7 @@ public class DeleteBookFromCartApiTest extends ApiBase {
             @Tag("smoke")
     })
     @Test
-    @DisplayName("Проверка удаления книги из корзины")
+    @DisplayName("Проверка удаления книги из корзины через API")
     public void successfulDeleteBookFromCartApiTest() {
         BooksData booksData = new BooksData();
 

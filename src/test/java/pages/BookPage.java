@@ -13,13 +13,10 @@ public class BookPage {
     private static final SelenideElement CLOSE_BOOK_MODAL_BUTTON = $("[data-testid='modal__close--button']");
 
     @Step("Добавляем книгу в корзину")
-    public BookPage addBookToCart() {
+    public void addBookToCart() {
         ADD_BOOK_TO_CART.shouldBe(visible.because("Не отображается кнопка для добавления книги в корзину")).click();
         if (BOOK_MODAL.is(visible)) {
             CLOSE_BOOK_MODAL_BUTTON.click();
-            return this;
-        } else {
-            return this;
         }
     }
 }

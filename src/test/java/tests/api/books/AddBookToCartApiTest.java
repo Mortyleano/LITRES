@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static specs.BooksSpecification.addBookToCartRequestSpec;
 import static specs.BooksSpecification.addBookToCartResponseSpec;
 
-@DisplayName("Добавление книги в корзину")
+@DisplayName("Добавление книги в корзину через API")
 public class AddBookToCartApiTest extends ApiBase {
 
     @Tags({
@@ -25,7 +25,7 @@ public class AddBookToCartApiTest extends ApiBase {
             @Tag("smoke")
     })
     @Test
-    @DisplayName("Проверка добавления книги в корзину")
+    @DisplayName("Проверка добавления книги в корзину через API")
     public void successfulAddBookToCartApiTest() {
         BooksData booksData = new BooksData();
 
