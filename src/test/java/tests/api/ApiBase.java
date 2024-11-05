@@ -1,6 +1,5 @@
 package tests.api;
 
-import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
