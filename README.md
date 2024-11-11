@@ -74,13 +74,13 @@ clean test -Dtype=${TAG}
 * <code>WINDOW_SIZE</code> – размер окна браузера, в котором будут запускаться автотесты. По-умолчанию - <code>1920x1080</code>;
 * <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться автотесты
 <a id="build"></a>
-## <a name="Сборка в Jenkins"><img src="media/icons/Jenkins.svg" title="Jenkins" width="4%"/> **Сборка в Jenkins** </a>
+## <a href="https://jenkins.autotests.cloud/job/LITRES_PROJECT/" target="_blank" name="Сборка в Jenkins"><img src="media/icons/Jenkins.svg" title="Jenkins" width="4%"/> **Сборка в Jenkins** </a>
 <p align="center">
 <img title="Jenkins Build" src="media/screenshots/Jenkins.png" alt="">
 </p>
 
 <a id="allure"></a>
-## <a name="Пример Allure-отчета"><img src="media/icons/AllureReport.svg" title="Allure Report" width="4%"/> **Пример Allure-отчета** </a>
+## <a href="https://jenkins.autotests.cloud/job/LITRES_PROJECT/21/allure/#suites/22c6e3f9c7ca7eb8a4821fa801aeb0eb/66c0ab83c36eea29/" target="_blank" name="Пример Allure-отчета"><img src="media/icons/AllureReport.svg" title="Allure Report" width="4%"/> **Пример Allure-отчета** </a>
 ### Overview
 
 <p align="center">
