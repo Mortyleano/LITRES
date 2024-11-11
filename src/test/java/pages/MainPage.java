@@ -3,6 +3,8 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.not;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -51,7 +53,7 @@ public class MainPage {
 
     @Step("Проверяем, что не отображается поп-ап для авторизации")
     public boolean isPopupNotPresent() {
-        return loginPopUp.shouldNotBe(visible).is(not(visible));
+        return loginPopUp.shouldNotBe(visible, Duration.ofSeconds(5)).is(not(visible));
     }
 
     @Step("Получаем текст ошибки валидации из поп-апа для авторизации")
