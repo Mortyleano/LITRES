@@ -5,8 +5,7 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-import static data.ConfigData.LAUNCH_CONFIG;
-import static data.ConfigData.PATH_CONFIG;
+import static data.ConfigData.API_CONFIG;
 import static helpers.CustomAllureListener.withCustomTemplates;
 import static io.restassured.RestAssured.with;
 import static io.restassured.filter.log.LogDetail.BODY;
@@ -20,8 +19,7 @@ public class BooksSpecification {
                 .filter(withCustomTemplates())
                 .log().all()
                 .contentType(JSON)
-                .baseUri(LAUNCH_CONFIG.getBaseApiUrl())
-                .basePath(PATH_CONFIG.getApiPathAddBook())
+                .basePath(API_CONFIG.getApiPathAddBook())
                 .header("session-id", UserSessionData.getSessionId());
     }
 
@@ -30,8 +28,7 @@ public class BooksSpecification {
                 .filter(withCustomTemplates())
                 .log().all()
                 .contentType(JSON)
-                .baseUri(LAUNCH_CONFIG.getBaseApiUrl())
-                .basePath(PATH_CONFIG.getApiPathDeleteBook())
+                .basePath(API_CONFIG.getApiPathDeleteBook())
                 .header("session-id", UserSessionData.getSessionId());
     }
 
@@ -39,8 +36,7 @@ public class BooksSpecification {
             .filter(withCustomTemplates())
             .log().all()
             .contentType(JSON)
-            .baseUri(LAUNCH_CONFIG.getBaseApiUrl())
-            .basePath(PATH_CONFIG.getApiPathAddBook());
+            .basePath(API_CONFIG.getApiPathAddBook());
 
     public static ResponseSpecification addBookToCartResponseSpec = new ResponseSpecBuilder()
             .expectStatusCode(200)
@@ -52,8 +48,7 @@ public class BooksSpecification {
             .filter(withCustomTemplates())
             .log().all()
             .contentType(JSON)
-            .baseUri(LAUNCH_CONFIG.getBaseApiUrl())
-            .basePath(PATH_CONFIG.getApiPathDeleteBook());
+            .basePath(API_CONFIG.getApiPathDeleteBook());
 
     public static ResponseSpecification deleteBookFromCartResponseSpec = new ResponseSpecBuilder()
             .expectStatusCode(204)

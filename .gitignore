@@ -3,6 +3,9 @@ build/
 !**/src/main/**
 !**/src/test/**
 
+### Authorization properties ###
+src/test/resources/properties/auth.properties
+
 ### IntelliJ IDEA ###
 .idea
 *.iws

@@ -3,15 +3,9 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:properties/launch.properties"
+        "classpath:properties/browser.properties"
 })
-public interface LaunchConfig extends Config {
-
-    @Key("baseApiUrl")
-    String getBaseApiUrl();
-
-    @Key("baseUrl")
-    String getBaseUrl();
+public interface BrowserConfig extends Config {
 
     @Key("browserSize")
     String getBrowserSize();

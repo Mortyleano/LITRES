@@ -1,8 +1,8 @@
 package api.authtorization;
 
-import data.AuthorizationData;
+import models.AuthorizationModel;
 
-import static data.ConfigData.PATH_CONFIG;
+import static data.ConfigData.API_CONFIG;
 import static io.restassured.RestAssured.given;
 import static specs.AuthorizationSpecification.authorizationRequestSpec;
 import static specs.AuthorizationSpecification.authorizationResponseSpec;
@@ -10,7 +10,7 @@ import static specs.AuthorizationSpecification.authorizationResponseSpec;
 public class AuthorizationApi {
 
     public String getAuthorizationResponse() {
-        AuthorizationData authData = new AuthorizationData();
+        AuthorizationModel authData = new AuthorizationModel();
         return given(authorizationRequestSpec)
                 .body(authData)
                 .when()
@@ -18,6 +18,6 @@ public class AuthorizationApi {
                 .then()
                 .spec(authorizationResponseSpec)
                 .extract()
-                .path(PATH_CONFIG.getApiPathSid());
+                .path(API_CONFIG.getApiPathSid());
     }
 }

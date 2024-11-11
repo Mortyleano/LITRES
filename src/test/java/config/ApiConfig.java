@@ -3,9 +3,9 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:properties/path.properties"
+        "classpath:properties/api.properties"
 })
-public interface PathConfig extends Config {
+public interface ApiConfig extends Config {
 
     @Key("apiPathLogin")
     String getApiPathLogin();
@@ -18,4 +18,7 @@ public interface PathConfig extends Config {
 
     @Key("apiPathDeleteBook")
     String getApiPathDeleteBook();
+
+    @Key("apiPathAddedArts")
+    String getApiPathAddedArts();
 }

@@ -4,8 +4,7 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-import static data.ConfigData.LAUNCH_CONFIG;
-import static data.ConfigData.PATH_CONFIG;
+import static data.ConfigData.API_CONFIG;
 import static helpers.CustomAllureListener.withCustomTemplates;
 import static io.restassured.RestAssured.with;
 import static io.restassured.filter.log.LogDetail.BODY;
@@ -18,8 +17,7 @@ public class AuthorizationSpecification {
             .filter(withCustomTemplates())
             .log().all()
             .contentType(JSON)
-            .baseUri(LAUNCH_CONFIG.getBaseApiUrl())
-            .basePath(PATH_CONFIG.getApiPathLogin())
+            .basePath(API_CONFIG.getApiPathLogin())
             .header("App-Id", "115");
 
     public static ResponseSpecification authorizationResponseSpec = new ResponseSpecBuilder()
@@ -32,8 +30,7 @@ public class AuthorizationSpecification {
             .filter(withCustomTemplates())
             .log().all()
             .contentType(JSON)
-            .baseUri(LAUNCH_CONFIG.getBaseApiUrl())
-            .basePath(PATH_CONFIG.getApiPathLogin())
+            .basePath(API_CONFIG.getApiPathLogin())
             .header("App-Id", "114");
 
     public static ResponseSpecification unsuccessfulAuthorizationResponseSpec = new ResponseSpecBuilder()

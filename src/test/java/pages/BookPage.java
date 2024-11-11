@@ -8,15 +8,15 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class BookPage {
 
-    private static final SelenideElement ADD_BOOK_TO_CART = $("[data-testid='book__addToCartButton']");
-    private static final SelenideElement BOOK_MODAL = $("[data-testid='modalWindow--content']");
-    private static final SelenideElement CLOSE_BOOK_MODAL_BUTTON = $("[data-testid='modal__close--button']");
+    private final SelenideElement addBookToCart = $("[data-testid='book__addToCartButton']");
+    private final SelenideElement bookModal = $("[data-testid='modalWindow--content']");
+    private final SelenideElement closeBookModalButton = $("[data-testid='modal__close--button']");
 
     @Step("Добавляем книгу в корзину")
     public void addBookToCart() {
-        ADD_BOOK_TO_CART.shouldBe(visible.because("Не отображается кнопка для добавления книги в корзину")).click();
-        if (BOOK_MODAL.is(visible)) {
-            CLOSE_BOOK_MODAL_BUTTON.click();
+        addBookToCart.click();
+        if (bookModal.is(visible)) {
+            closeBookModalButton.click();
         }
     }
 }

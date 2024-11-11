@@ -1,8 +1,10 @@
 package tests.api.books;
 
 import api.books.BooksApi;
-import data.BooksData;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import io.restassured.response.Response;
+import models.BooksModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -10,13 +12,13 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import tests.api.ApiBase;
 
-import static data.TestsData.STATUS_CODE_204;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 import static specs.BooksSpecification.deleteBookFromCartRequestSpec;
 import static specs.BooksSpecification.deleteBookFromCartResponseSpec;
 
+@Feature("Корзина")
 @DisplayName("Удаление книги из корзины через API")
 public class DeleteBookFromCartApiTest extends ApiBase {
 
@@ -25,6 +27,7 @@ public class DeleteBookFromCartApiTest extends ApiBase {
         new BooksApi().addBookToCartBeforeApiTest();
     }
 
+    @Owner("Aleksandr Aleksandrov")
     @Tags({
             @Tag("api"),
             @Tag("smoke")
@@ -32,7 +35,7 @@ public class DeleteBookFromCartApiTest extends ApiBase {
     @Test
     @DisplayName("Проверка удаления книги из корзины через API")
     public void successfulDeleteBookFromCartApiTest() {
-        BooksData booksData = new BooksData();
+        BooksModel booksData = new BooksModel();
 
         Response response = given(deleteBookFromCartRequestSpec)
                 .body(booksData)
@@ -45,7 +48,7 @@ public class DeleteBookFromCartApiTest extends ApiBase {
         step("Проверяем получение статус-кода '204' в теле ответа после удаления книги из корзины", () ->
                 assertThat(response.getStatusCode())
                         .as("Не получили ожидаемый статус-код в теле ответа")
-                        .isEqualTo(STATUS_CODE_204)
+                        .isEqualTo(204)
         );
     }
 }

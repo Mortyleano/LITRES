@@ -2,6 +2,8 @@ package tests.web.books;
 
 import api.books.BooksApi;
 import helpers.WithLogin;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -9,14 +11,15 @@ import org.junit.jupiter.api.Test;
 import pages.CartPage;
 import tests.web.WebBase;
 
-import static helpers.Navigation.openCartPage;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
+@Feature("Корзина")
 @DisplayName("Удаление книги из корзины")
 public class DeleteBookFromCartTest extends WebBase {
 
+    @Owner("Aleksandr Aleksandrov")
     @Tags({
             @Tag("web"),
             @Tag("smoke")
@@ -27,9 +30,7 @@ public class DeleteBookFromCartTest extends WebBase {
     public void deleteBookFromCartTest() {
         new BooksApi().addBookToCartBeforeTest();
 
-        openCartPage();
-
-        CartPage cartPage = new CartPage().deleteBook();
+        CartPage cartPage = new CartPage().openCartPage().deleteBook();
         step("Проверяем, что книга отсутствует в корзине после удаления", () -> {
             assertSoftly(softly -> {
                 assertFalse(cartPage.isTitleBookInCartPresent(), "Книга не удалилась из корзины");

@@ -1,7 +1,7 @@
 package api.books;
 
-import data.BooksData;
 import io.qameta.allure.Step;
+import models.BooksModel;
 
 import static io.restassured.RestAssured.given;
 import static specs.BooksSpecification.addBookToCartRequestSpec;
@@ -15,7 +15,7 @@ public class BooksApi {
 
     @Step("Добавляем книгу в корзину через API метод перед тестом")
     public void addBookToCartBeforeTest() {
-        BooksData booksData = new BooksData();
+        BooksModel booksData = new BooksModel();
         given(getAddBookToCartRequestSpec())
                 .body(booksData)
                 .when()
@@ -28,7 +28,7 @@ public class BooksApi {
 
     @Step("Добавляем книгу в корзину через API метод перед тестом")
     public void addBookToCartBeforeApiTest() {
-        BooksData booksData = new BooksData();
+        BooksModel booksData = new BooksModel();
         given(addBookToCartRequestSpec)
                 .body(booksData)
                 .when()
@@ -41,7 +41,7 @@ public class BooksApi {
 
     @Step("Удаляем книгу из корзины через API метод после теста")
     public void deleteBookFromCartAfterTest() {
-        BooksData booksData = new BooksData();
+        BooksModel booksData = new BooksModel();
         given(getDeleteBookFromCartRequestSpec())
                 .body(booksData)
                 .when()
@@ -54,7 +54,7 @@ public class BooksApi {
 
     @Step("Удаляем книгу из корзины через API метод после теста")
     public void deleteBookFromCartAfterApiTest() {
-        BooksData booksData = new BooksData();
+        BooksModel booksData = new BooksModel();
         given(deleteBookFromCartRequestSpec)
                 .body(booksData)
                 .when()

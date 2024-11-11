@@ -14,19 +14,20 @@ import utils.Attachments;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static data.ConfigData.LAUNCH_CONFIG;
+import static data.ConfigData.BASE_CONFIG;
+import static data.ConfigData.BROWSER_CONFIG;
 
 public class WebBase {
 
     @BeforeAll
     @Step("Устанавливаем конфигурации перед запуском теста")
     public static void settingsTest() {
-        RestAssured.baseURI = LAUNCH_CONFIG.getBaseApiUrl();
-        Configuration.baseUrl = LAUNCH_CONFIG.getBaseUrl();
-        Configuration.browser = LAUNCH_CONFIG.getBrowser();
-        Configuration.browserVersion = LAUNCH_CONFIG.getBrowserVersion();
-        Configuration.browserSize = LAUNCH_CONFIG.getBrowserSize();
-        Configuration.pageLoadStrategy = LAUNCH_CONFIG.pageLoadStrategy();
+        RestAssured.baseURI = BASE_CONFIG.getBaseApiUrl();
+        Configuration.baseUrl = BASE_CONFIG.getBaseUrl();
+        Configuration.browser = BROWSER_CONFIG.getBrowser();
+        Configuration.browserVersion = BROWSER_CONFIG.getBrowserVersion();
+        Configuration.browserSize = BROWSER_CONFIG.getBrowserSize();
+        Configuration.pageLoadStrategy = BROWSER_CONFIG.pageLoadStrategy();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -43,8 +44,8 @@ public class WebBase {
     }
 
     @AfterEach
-    @Step("Выполняем конфигурации после окончания теста")
-    public void settingsAfterTest() {
+    @Step("Добавляем вложения и завершаем сессию браузера")
+    public void tearDown() {
         Attachments.screenshotAs("Изображение последнего события из теста");
         Attachments.pageSource();
         Attachments.browserConsoleLogs();

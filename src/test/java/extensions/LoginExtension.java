@@ -1,4 +1,4 @@
-package helpers;
+package extensions;
 
 import api.authtorization.AuthorizationApi;
 import io.qameta.allure.Step;
