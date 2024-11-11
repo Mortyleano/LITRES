@@ -53,7 +53,7 @@ public class MainPage {
 
     @Step("Проверяем, что не отображается поп-ап для авторизации")
     public boolean isPopupNotPresent() {
-        return loginPopUp.shouldNotBe(visible, Duration.ofSeconds(5)).is(not(visible));
+        return loginPopUp.is(not(visible), Duration.ofSeconds(5));
     }
 
     @Step("Получаем текст ошибки валидации из поп-апа для авторизации")

@@ -30,16 +30,16 @@ public class CartPage {
 
     @Step("Проверяем отображение наименование книги в корзине")
     public boolean isTitleBookInCartPresent() {
-        return bookTitle.shouldBe(visible).is(visible);
+        return bookTitle.is(visible);
     }
 
     @Step("Проверяем отображение автора книги в корзине")
     public boolean isAuthorBookInCartPresent() {
-        return bookAuthor.shouldBe(visible).is(visible);
+        return bookAuthor.is(visible);
     }
 
     @Step("Проверяем отображение обложки для книги в корзине")
     public boolean isCoverBookInCartPresent() {
-        return bookCover.shouldBe(visible).is(visible);
+        return bookCover.is(visible);
     }
 }
